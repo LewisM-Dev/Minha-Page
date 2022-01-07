@@ -76,7 +76,6 @@ main .conteudo {
 }
 
 main .conteudo h2 {
-
     font-family: 'Sen', sans-serif;
     font-style: normal;
     font-weight: normal;
@@ -148,17 +147,41 @@ footer a {
     display: flex;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 320px) {
     main .saudacao {
         position: absolute;
-        left: 100px;
-        top: 20px;
+        left: 40px;
+        top: 60px;
 
-        line-height: 24px;
-        font-size: 24px;
+        line-height: 18px;
+        font-size: 18px;
     }
 
     header .menu {
-        left: 480px;
+        left: 260px;
+    }
+
+    main .sobremim {
+        width: 320px;
+    }
+
+    main .perfil {
+        width: 90px;
+        height: 90px;
+        left: 120px;
+        top: 150px;
+    }
+
+    .barra-verde1 {
+        width: 320px;
+    }
+
+    main .conteudo h2 {
+        position: absolute;
+        left: 50px;
+
+        font-size: 18px;
+        line-height: 18px;
+        text-align: center;
     }
   }
