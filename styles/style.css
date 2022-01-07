@@ -147,7 +147,159 @@ footer a {
     display: flex;
 }
 
+@media only screen and (max-width: 1024px) {
+    header .menu {
+        left: 980px;
+    }
+
+    main .sobremim {
+        width: 1026px;
+    }
+
+    main .saudacao {
+        position: absolute;
+        left: 60px;
+        top: 50px;
+
+        line-height: 36px;
+        font-size: 36px;
+    }
+
+    main .perfil {
+        width: 150px;
+        height: 150px;
+        left: 750px;
+        top: 70px;
+    }
+
+    .barra-verde1 {
+        width: 1026px;
+    }
+
+    main .conteudo h2 {
+        position: absolute;
+        left: 300px;
+
+        font-size: 30px;
+        line-height: 30px;
+    }
+
+    #github {
+        width: 226px;
+        margin-left: 250px;
+        margin-top: 100px;
+    }
+    
+    #linkedin {
+        width: 209px;
+    }
+
+    .barra-verde2 {
+        width: 1026px;
+    }
+
+    #insta { 
+        margin-left: 85px;
+    }
+    
+    footer h2, a {
+        font-size: 20px;
+        line-height: 18px;
+    }
+
+    .contato {
+        margin-left: 190px;
+        margin-top: 45px;
+    
+        display: flex;
+    }
+
+    footer a {
+        margin-top: 17px;
+    }
+  }
+
+@media only screen and (max-width: 375px) {
+    header .menu {
+        left: 305px;
+    }
+
+    main .sobremim {
+        width: 360px;
+    }
+
+    main .saudacao {
+        position: absolute;
+        left: 60px;
+        top: 50px;
+
+        line-height: 24px;
+        font-size: 18px;
+    }
+
+    main .perfil {
+        width: 100px;
+        height: 100px;
+        left: 140px;
+        top: 150px;
+    }
+
+    .barra-verde1 {
+        width: 360px;
+    }
+
+    main .conteudo h2 {
+        position: absolute;
+        left: 62px;
+
+        font-size: 20px;
+        line-height: 18px;
+    }
+
+    #github {
+        width: 126px;
+        margin-left: 50px;
+        margin-top: 100px;
+    }
+    
+    #linkedin {
+        width: 129px;
+    }
+
+    .barra-verde2 {
+        width: 360px;
+    }
+
+    #insta { 
+        margin-left: 85px;
+    }
+    
+    footer h2, a {
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .contato {
+        margin-left: -190px;
+        margin-top: 100px;
+    
+        display: flex;
+    }
+
+    footer a {
+        margin-top: 10px;
+    }
+  }
+
 @media only screen and (max-width: 320px) {
+    header .menu {
+        left: 260px;
+    }
+
+    main .sobremim {
+        width: 310px;
+    }
+
     main .saudacao {
         position: absolute;
         left: 40px;
@@ -155,14 +307,6 @@ footer a {
 
         line-height: 18px;
         font-size: 18px;
-    }
-
-    header .menu {
-        left: 260px;
-    }
-
-    main .sobremim {
-        width: 320px;
     }
 
     main .perfil {
@@ -173,15 +317,48 @@ footer a {
     }
 
     .barra-verde1 {
-        width: 320px;
+        width: 310px;
     }
 
     main .conteudo h2 {
         position: absolute;
-        left: 50px;
+        left: 48px;
 
         font-size: 18px;
         line-height: 18px;
-        text-align: center;
+    }
+
+    #github {
+        width: 126px;
+        margin-left: 20px;
+        margin-top: 80px;
+    }
+    
+    #linkedin {
+        width: 129px;
+    }
+
+    .barra-verde2 {
+        width: 310px;
+    }
+
+    #insta { 
+        margin-left: 60px;
+    }
+    
+    footer h2, a {
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .contato {
+        margin-left: -200px;
+        margin-top: 100px;
+    
+        display: flex;
+    }
+
+    footer a {
+        margin-top: 10px;
     }
   }
