@@ -1,44 +1,223 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles/style.css" media="screen">
-    <title>Lewis M. - Dev</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosso Amor Através do Tempo - Responsivo</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            margin: 0;
+            padding-top: 30px; /* Ajuste o padding superior para telas menores */
+            box-sizing: border-box;
+            text-align: center; /* Centraliza o texto em telas menores */
+        }
+
+        .container {
+            margin-bottom: 30px; /* Reduz a margem inferior */
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3em; /* Reduz o tamanho da fonte em telas menores */
+            color: #ff69b4;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 15px; /* Reduz a margem inferior */
+        }
+
+        .data-inicio {
+            font-size: 1.1em; /* Reduz o tamanho da fonte */
+            margin-bottom: 20px; /* Reduz a margem inferior */
+            color: #ddd;
+        }
+
+        #contador {
+            font-size: 2em; /* Reduz o tamanho da fonte */
+            margin-bottom: 40px; /* Reduz a margem inferior */
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        .carousel-container {
+            width: 95%; /* Ocupa mais largura em telas menores */
+            max-width: 600px; /* Mantém uma largura máxima para telas grandes */
+            margin-bottom: 40px; /* Reduz a margem inferior */
+        }
+
+        .carousel-container .slick-slide {
+            margin: 0 100px; /* Reduz a margem lateral */
+        }
+
+        .carousel-container .slick-slide img {
+            width: 100%;
+            border-radius: 10px; /* Arredondamento menor */
+            border: 3px solid #ff69b4; /* Borda menor */
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7); /* Sombra menor */
+        }
+
+        /* Estilização das setas */
+        .slick-prev:before,
+        .slick-next:before {
+            font-size: 2em; /* Reduz o tamanho das setas */
+            color: #ff69b4;
+            opacity: 0.8;
+        }
+
+        .slick-prev {
+            left: 10px; /* Ajusta a posição em telas menores */
+            z-index: 1;
+        }
+
+        .slick-next {
+            right: 10px; /* Ajusta a posição em telas menores */
+            z-index: 1;
+        }
+
+        /* Estilização dos dots */
+        .slick-dots {
+            bottom: -30px; /* Ajusta a posição dos dots */
+        }
+
+        .slick-dots li button:before {
+            font-size: 1em; /* Reduz o tamanho dos dots */
+            color: #ff69b4;
+            opacity: 0.7;
+        }
+
+        .slick-dots li.slick-active button:before {
+            color: #ff69b4;
+            opacity: 0.9;
+        }
+
+        /* Ajustes específicos para telas menores (até 768px de largura) */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5em;
+            }
+
+            .carousel-container {
+                width: 90%;
+            }
+
+            .slick-prev {
+                left: -15px;
+            }
+
+            .slick-next {
+                right: -15px;
+            }
+        }
+
+        /* Ajustes específicos para telas ainda menores (até 480px de largura) */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            #contador {
+                font-size: 1.8em;
+            }
+
+            .carousel-container {
+                width: 95%;
+            }
+
+            .slick-prev:before,
+            .slick-next:before {
+                font-size: 1.5em;
+            }
+
+            .slick-dots {
+                bottom: -20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header class="cabecalho">
-        <img src="img/Menu_icon_icon-icons.com_71858.png" class="menu">
-    </header>
+    <div class="container">
+        <h1>Nosso Amor Através do Tempo</h1>
+        <p class="data-inicio">Desde o dia 05 de Janeiro de 2025</p>
+        <div id="contador"></div>
+    </div>
 
-    <main>
-        <div class="sobremim">
-            <img src="img/FotoLuis.png" alt="Luis Maycon" class="perfil">
-            <h1 class="saudacao">Olá! Eu sou o Luis Maycon, <br> desenvolvedor front-end, e <br> programador de jogos.</h1>
+    <div class="carousel-container">
         </div>
 
-        <div class="barra-verde1"></div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            const fotos = [
+                "/WhatsApp Image 2025-05-13 at 13.35.46.jpeg",
+                "/WhatsApp Image 2025-05-13 at 13.35.49.jpeg",
+                "/WhatsApp Image 2025-05-13 at 13.35.51.jpeg",
+                // Adicione mais URLs de fotos aqui
+            ];
 
-        <div class="conteudo">
-            <h2>Conheça mais sobre o meu <br> trabalho:</h2>
-            <a href="https://github.com/LewisM-Dev">
-                <img src="img/GitHub-logo.png" id="github">
-            </a>
-            <a href="https://www.linkedin.com/in/luis-maycon-ab8314221">
-                <img src="img/LinkedIn_Logo.svg.png" id="linkedin">
-            </a>
-        </div>
-    </main>
+            const carouselContainer = $('.carousel-container');
 
-    <div class="barra-verde2"></div>
+            fotos.forEach(url => {
+                carouselContainer.append(`<div><img src="${url}" alt="Foto"></div>`);
+            });
 
-    <footer class="rodape">
-        <a href="https://www.instagram.com/lewis_maycon/"><img src="img/2048px-Instagram_icon-removebg-preview.png" id="insta"></a>
-        <a href="https://www.discord.com"><img src="img/dircordlogo.png" id="discord"></a>
+            carouselContainer.slick({
+                dots: true,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 4000,
+                arrows: true,
+                fade: true,
+                cssEase: 'ease-in-out',
+                responsive: [
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            arrows: false, // Oculta as setas em telas menores
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            arrows: false, // Oculta as setas em telas ainda menores
+                            dots: true,
+                        }
+                    }
+                ]
+            });
 
-        <div class="contato">
-            <h2>Contato:</h2>
-            <a href=mailto:luismayconrp@gmail.com>luismayconrp@gmail.com</a>
-        </div>
-    </footer>
+            function atualizarContador() {
+                const dataInicio = new Date('2025-01-05T17:30:00');
+                const agora = new Date();
+                const diferencaTempo = agora.getTime() - dataInicio.getTime();
+
+                const segundosExatos = Math.floor(diferencaTempo / 1000) % 60;
+                const minutosExatos = Math.floor(diferencaTempo / (1000 * 60)) % 60;
+                const horasExatas = Math.floor(diferencaTempo / (1000 * 60 * 60)) % 24;
+                const diasExatos = Math.floor(diferencaTempo / (1000 * 60 * 60 * 24));
+                const mesesExatos = Math.floor(diasExatos / 30.44); // Correção aqui
+                const anosExatos = Math.floor(mesesExatos / 12);
+                const mesesNoAno = mesesExatos % 12;
+                const diasNoMes = Math.floor(diasExatos % 30.44);
+
+                document.getElementById('contador').innerText = `${anosExatos} anos, ${mesesNoAno} meses, ${diasNoMes} dias, ${horasExatas} horas, ${minutosExatos} minutos e ${segundosExatos} segundos`;
+            }
+
+            setInterval(atualizarContador, 1000);
+        });
+    </script>
 </body>
 </html>
