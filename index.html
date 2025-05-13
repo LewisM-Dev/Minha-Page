@@ -1,223 +1,262 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayara + Luis ❤</title>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+  <meta charset="UTF-8">
+  <title>Nosso Amor</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+  <style>
+      @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+    body {
+      background: #000;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-        body {
-            background-color: #000;
-            color: #fff;
-            font-family: sans-serif;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            min-height: 100vh;
-            margin: 0;
-            padding-top: 30px; /* Ajuste o padding superior para telas menores */
-            box-sizing: border-box;
-            text-align: center; /* Centraliza o texto em telas menores */
-        }
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3em;
+      margin-top: 40px;
+      margin-bottom: 50px;
+      color: white;
+      text-align: center;
+      margin-bottom: 10px;
+    }
 
-        .container {
-            margin-bottom: 30px; /* Reduz a margem inferior */
-        }
+    .timer {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-bottom: 60px;
+    }
 
-        h1 {
-            font-family: 'Dancing Script', cursive;
-            font-size: 3em; /* Reduz o tamanho da fonte em telas menores */
-            color: #ff69b4;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-            margin-bottom: 15px; /* Reduz a margem inferior */
-        }
+    .unit {
+      position: relative;
+      width: 130px;
+      height: 130px;
+    }
 
-        .data-inicio {
-            font-size: 1.1em; /* Reduz o tamanho da fonte */
-            margin-bottom: 20px; /* Reduz a margem inferior */
-            color: #ddd;
-        }
+    .circle-bg, .circle-progress {
+      fill: none;
+      stroke-width: 8;
+      r: 60;
+      cx: 65;
+      cy: 65;
+    }
 
-        #contador {
-            font-size: 2em; /* Reduz o tamanho da fonte */
-            margin-bottom: 40px; /* Reduz a margem inferior */
-            color: #fff;
-            letter-spacing: 1px;
-        }
+    .circle-bg {
+      stroke: rgba(255, 255, 255, 0.1);
+    }
 
-        .carousel-container {
-            width: 95%; /* Ocupa mais largura em telas menores */
-            max-width: 600px; /* Mantém uma largura máxima para telas grandes */
-            margin-bottom: 40px; /* Reduz a margem inferior */
-        }
+    .value {
+      position: absolute;
+      top: 36%;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 1.7em;
+      font-weight: bold;
+      transition: all 0.3s ease-in-out;
+    }
 
-        .carousel-container .slick-slide {
-            margin: 0 100px; /* Reduz a margem lateral */
-        }
+    .label {
+      position: absolute;
+      bottom: -15%;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 0.9em;
+      color: #ccc;
+    }
 
-        .carousel-container .slick-slide img {
-            width: 100%;
-            border-radius: 10px; /* Arredondamento menor */
-            border: 3px solid; /* Borda menor */
-            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7); /* Sombra menor */
-        }
+    /* Carrossel */
+    .swiper {
+      width: 50%;
+      max-width: 800px;
+      margin: 0 auto 40px;
+    }
 
-        /* Estilização das setas */
-        .slick-prev:before,
-        .slick-next:before {
-            font-size: 2em; /* Reduz o tamanho das setas */
-            color: #ff69b4;
-            opacity: 0.8;
-        }
+    .swiper-slide {
+      text-align: center;
+    }
 
-        .slick-prev {
-            left: 10px; /* Ajusta a posição em telas menores */
-            z-index: 1;
-        }
+    .swiper-slide img {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 105, 180, 0.4);
+    }
 
-        .slick-next {
-            right: 10px; /* Ajusta a posição em telas menores */
-            z-index: 1;
-        }
+    .swiper-pagination-bullet-active {
+      background: #ff69b4;
+    }
 
-        /* Estilização dos dots */
-        .slick-dots {
-            bottom: -30px; /* Ajusta a posição dos dots */
-        }
+    /* Botão de Compartilhar */
+    .share-button {
+      background: linear-gradient(45deg, #ff0033, #ff66a3);
+      border: none;
+      color: white;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(255, 102, 160, 0.4);
+      margin-bottom: 40px;
+      transition: transform 0.2s ease;
+    }
 
-        .slick-dots li button:before {
-            font-size: 1em; /* Reduz o tamanho dos dots */
-            color: #ff69b4;
-            opacity: 0.7;
-        }
+    .share-button:hover {
+      transform: scale(1.05);
+    }
 
-        .slick-dots li.slick-active button:before {
-            color: #ff69b4;
-            opacity: 0.9;
-        }
+    .circle-progress {
+  transform: rotate(180deg);
+  transform-origin: center;
+}
 
-        /* Ajustes específicos para telas menores (até 768px de largura) */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5em;
-            }
-
-            .carousel-container {
-                width: 90%;
-            }
-
-            .slick-prev {
-                left: -15px;
-            }
-
-            .slick-next {
-                right: -15px;
-            }
-        }
-
-        /* Ajustes específicos para telas ainda menores (até 480px de largura) */
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 2em;
-            }
-
-            #contador {
-                font-size: 1.8em;
-            }
-
-            .carousel-container {
-                width: 95%;
-            }
-
-            .slick-prev:before,
-            .slick-next:before {
-                font-size: 1.5em;
-            }
-
-            .slick-dots {
-                bottom: -20px;
-            }
-        }
-    </style>
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Nosso Amor Através do Tempo</h1>
-        <p class="data-inicio">Desde o dia 05 de Janeiro de 2025</p>
-        <div id="contador"></div>
+
+    <h1>❤</h1>
+  <h1>Nosso amor através do tempo</h1>
+
+  <div class="timer">
+    <div class="unit">
+      <svg width="130" height="130">
+        <circle class="circle-bg" r="60" cx="65" cy="65"/>
+        <circle id="monthsCircle" class="circle-progress" stroke="#ff0033" r="60" cx="65" cy="65" stroke-dasharray="377" stroke-dashoffset="377"/>
+      </svg>
+      <div class="value" id="months">0</div>
+      <div class="label">MESES</div>
     </div>
+    <div class="unit">
+      <svg width="130" height="130">
+        <circle class="circle-bg" r="60" cx="65" cy="65"/>
+        <circle id="daysCircle" class="circle-progress" stroke="#ff3333" r="60" cx="65" cy="65" stroke-dasharray="377" stroke-dashoffset="377"/>
+      </svg>
+      <div class="value" id="days">0</div>
+      <div class="label">DIAS</div>
+    </div>
+    <div class="unit">
+      <svg width="130" height="130">
+        <circle class="circle-bg" r="60" cx="65" cy="65"/>
+        <circle id="hoursCircle" class="circle-progress" stroke="#ff6666" r="60" cx="65" cy="65" stroke-dasharray="377" stroke-dashoffset="377"/>
+      </svg>
+      <div class="value" id="hours">0</div>
+      <div class="label">HORAS</div>
+    </div>
+    <div class="unit">
+      <svg width="130" height="130">
+        <circle class="circle-bg" r="60" cx="65" cy="65"/>
+        <circle id="minutesCircle" class="circle-progress" stroke="#ff99cc" r="60" cx="65" cy="65" stroke-dasharray="377" stroke-dashoffset="377"/>
+      </svg>
+      <div class="value" id="minutes">0</div>
+      <div class="label">MINUTOS</div>
+    </div>
+    <div class="unit">
+      <svg width="130" height="130">
+        <circle class="circle-bg" r="60" cx="65" cy="65"/>
+        <circle id="secondsCircle" class="circle-progress" stroke="#ffb6e6" r="60" cx="65" cy="65" stroke-dasharray="377" stroke-dashoffset="377"/>
+      </svg>
+      <div class="value" id="seconds">0</div>
+      <div class="label">SEGUNDOS</div>
+    </div>
+  </div>
 
-    <div class="carousel-container">
-        </div>
+  <!-- Carrossel -->
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="https://lewism-dev.github.io/Minha-Page/WhatsApp Image 2025-05-13 at 13.35.46.jpeg" alt="Foto 1"></div>
+      <div class="swiper-slide"><img src="https://lewism-dev.github.io/Minha-Page/WhatsApp Image 2025-05-13 at 13.35.49.jpeg" alt="Foto 2"></div>
+      <div class="swiper-slide"><img src="https://lewism-dev.github.io/Minha-Page/WhatsApp Image 2025-05-13 at 13.35.51.jpeg" alt="Foto 3"></div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script>
-        $(document).ready(function(){
-            const fotos = [
-                "https://lewism-dev.github.io/Minha-Page/WhatsApp Image 2025-05-13 at 13.35.46.jpeg",
-                "https://lewism-dev.github.io/Minha-Page/WhatsApp Image 2025-05-13 at 13.35.49.jpeg",
-                "https://lewism-dev.github.io/Minha-Page/WhatsApp Image 2025-05-13 at 13.35.51.jpeg",
-                // Adicione mais URLs de fotos aqui
-            ];
+  <!-- Botão de Compartilhar -->
+  <button class="share-button" onclick="compartilhar()">💌 Compartilhar ou Salvar</button>
 
-            const carouselContainer = $('.carousel-container');
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script>
+    const fullDash = 2 * Math.PI * 60;
+    const animateValue = (id, endVal) => {
+      const el = document.getElementById(id);
+      const startVal = parseInt(el.textContent) || 0;
+      const range = endVal - startVal;
+      const duration = 400;
+      let start = null;
 
-            fotos.forEach(url => {
-                carouselContainer.append(`<div><img src="${url}" alt="Foto"></div>`);
-            });
+      function step(timestamp) {
+        if (!start) start = timestamp;
+        const progress = timestamp - start;
+        const value = Math.round(startVal + range * (progress / duration));
+        el.textContent = value;
+        if (progress < duration) {
+          requestAnimationFrame(step);
+        } else {
+          el.textContent = endVal;
+        }
+      }
+      requestAnimationFrame(step);
+    };
 
-            carouselContainer.slick({
-                dots: true,
-                infinite: true,
-                speed: 300,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 4000,
-                arrows: true,
-                fade: true,
-                cssEase: 'ease-in-out',
-                responsive: [
-                    {
-                        breakpoint: 768,
-                        settings: {
-                            arrows: false, // Oculta as setas em telas menores
-                        }
-                    },
-                    {
-                        breakpoint: 480,
-                        settings: {
-                            arrows: false, // Oculta as setas em telas ainda menores
-                            dots: true,
-                        }
-                    }
-                ]
-            });
+    function updateTimer() {
+      const startDate = new Date('2025-01-05T00:00:00');
+      const now = new Date();
+      const diff = now - startDate;
 
-            function atualizarContador() {
-                const dataInicio = new Date('2025-01-05T17:30:00');
-                const agora = new Date();
-                const diferencaTempo = agora.getTime() - dataInicio.getTime();
+      const months = Math.floor(diff / (1000 * 60 * 60 * 24 * 30.4375));
+      const days = Math.floor((diff / (1000 * 60 * 60 * 24)) % 30.4375);
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
 
-                const segundosExatos = Math.floor(diferencaTempo / 1000) % 60;
-                const minutosExatos = Math.floor(diferencaTempo / (1000 * 60)) % 60;
-                const horasExatas = Math.floor(diferencaTempo / (1000 * 60 * 60)) % 24;
-                const diasExatos = Math.floor(diferencaTempo / (1000 * 60 * 60 * 24));
-                const mesesExatos = Math.floor(diasExatos / 30.44); // Correção aqui
-                const anosExatos = Math.floor(mesesExatos / 12);
-                const mesesNoAno = mesesExatos % 12;
-                const diasNoMes = Math.floor(diasExatos % 30.44);
+      animateValue('months', months);
+      animateValue('days', days);
+      animateValue('hours', hours);
+      animateValue('minutes', minutes);
+      animateValue('seconds', seconds);
 
-                document.getElementById('contador').innerText = `${anosExatos} anos, ${mesesNoAno} meses, ${diasNoMes} dias, ${horasExatas} horas, ${minutosExatos} minutos e ${segundosExatos} segundos`;
-            }
+      document.getElementById('monthsCircle').style.strokeDashoffset = fullDash - (fullDash * (months % 12) / 12);
+      document.getElementById('daysCircle').style.strokeDashoffset = fullDash - (fullDash * days / 30.4375);
+      document.getElementById('hoursCircle').style.strokeDashoffset = fullDash - (fullDash * hours / 24);
+      document.getElementById('minutesCircle').style.strokeDashoffset = fullDash - (fullDash * minutes / 60);
+      document.getElementById('secondsCircle').style.strokeDashoffset = fullDash - (fullDash * seconds / 60);
+    }
 
-            setInterval(atualizarContador, 1000);
-        });
-    </script>
+    setInterval(updateTimer, 1000);
+    updateTimer();
+
+    new Swiper('.swiper', {
+      loop: true,
+      autoplay: {
+        delay: 3500,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+
+    function compartilhar() {
+      if (navigator.share) {
+        navigator.share({
+          title: 'Nosso Amor 💖',
+          text: 'Olha só esse contador de amor lindo que fizemos!',
+          url: window.location.href
+        }).catch(err => console.log('Erro ao compartilhar:', err));
+      } else {
+        alert("Seu navegador não suporta compartilhamento direto. Salve esta página manualmente 💾");
+      }
+    }
+  </script>
+
 </body>
 </html>
